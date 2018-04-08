@@ -25,8 +25,8 @@ class Snapshot(Callback):
 
 
     def on_epoch_end(self, epoch, logs=None):
-        if epoch == 0 or epoch % self.period != 0:
-            return
+        if epoch == 0 or epoch % self.period != 0: return
+        # Only save at the end of a cycle, a not at the beginning
 
         if not os.path.exists(self.folder_path):
             os.makedirs(self.folder_path)
@@ -43,8 +43,7 @@ class Snapshot(Callback):
 
 
     def on_epoch_begin(self, epoch, logs=None):
-        if epoch <= 0 or (epoch - 1) % self.period == 0:
-            return
+        if epoch <= 0: return
 
         lr = self.schedule(epoch)
         K.set_value(self.model.optimizer.lr, lr)
