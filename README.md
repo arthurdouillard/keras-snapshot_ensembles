@@ -5,9 +5,9 @@ This repository contains an implementation in Keras of the paper [Snapshot Ensem
 The authors use a modified version of cyclical learning rate to force the model
 to *fall* into local minima at the end of each cycle. Each local minima makes different mistakes. Thus the ensemble of every local minima helps to reach a better generalization.
 
-![Image snapshot](snapshot_example.png)
+![Image snapshot](images/snapshot_example.png)
 
-![Image formula](snapshot_formula.png)
+![Image formula](images/snapshot_formula.png)
 
 # Prototype
 
