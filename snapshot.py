@@ -10,7 +10,7 @@ from keras.callbacks import Callback
 
 class Snapshot(Callback):
 
-    def __init__(self, folder_path, nb_epochs, verbose=0, nb_cycles=5):
+    def __init__(self, folder_path, nb_epochs, nb_cycles=5, verbose=0):
         if nb_cycles > nb_epochs:
             raise ValueError('nb_epochs has to be lower than nb_cycles.')
 
